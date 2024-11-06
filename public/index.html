@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Get Started.</h1>
+            <form action="/post" method="post" id="signupForm">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group" style="position: relative;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <span id="togglePassword" class="eye-icon">🙈</span>
+                </div>
+                <div class="signup-btn">
+                    <button type="submit" class="btn">Sign Up</button>
+                </div>
+                <div class="social-login">
+                    <div></div>
+                    <span>Or sign up with</span>
+                    <div></div>
+                </div>
+                <div class="social-icons">
+                    <img src="google-logo.png" alt="Google">
+                    <img src="facebook-new.png" alt="Facebook">
+                    <img src="twitter.png" alt="Twitter">
+                </div>
+                <div class="signin-link">
+                    Already have an account? <a href="#">Sign in</a>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('signupForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                const response = await fetch('/post', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+    
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.message);
+                    form.reset();
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('Error submitting form');
+            }
+        });
+    </script>
+</body>
+
+</html>

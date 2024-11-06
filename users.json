@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Nishant",
+    "email": "nishant@gmail.com",
+    "password": "nishant123"
+  },
+  {
+    "id": 2,
+    "name": "Footballs",
+    "email": "football@g.com",
+    "password": "football123"
+  },
+  {
+    "id": 3,
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "securepassword123"
+  },
+  {
+    "id": 4,
+    "name": "John Doe",
+    "email": "johndoe@exampale.com",
+    "password": "secure12345"
+  },
+  {
+    "id": 5,
+    "name": "John Doe",
+    "email": "johndasaoe@exampale.com",
+    "password": "secure12345"
+  },
+  {
+    "id": 6,
+    "name": "Nishant",
+    "email": "nishant123@gmail.com",
+    "password": "nishant123"
+  }
+]
